@@ -17,11 +17,11 @@ long_description = "See README at https://github.com/hfaran/slack-export-viewer"
 
 
 setup(
-    name="slack-export-viewer",
+    name="wcpe-slack-export-viewer",
     version=slackviewer.__version__,
     url='https://github.com/hfaran/slack-export-viewer',
     license='MIT License',
-    author='Hamza Faran',
+    author='Hamza Faran, Mark Hayward',
     author_email='hamzafaran@outlook.com',
     description=('Slack Export Archive Viewer'),
     long_description=long_description,
@@ -29,8 +29,8 @@ setup(
     packages=find_packages(),
     install_requires=install_requires,
     entry_points={'console_scripts': [
-        'slack-export-viewer = slackviewer.main:main',
-        'slack-export-viewer-cli = slackviewer.cli:cli'
+        'wcpe-slack-export-viewer = slackviewer.main:main',
+        'wcpe-slack-export-viewer-cli = slackviewer.cli:cli'
     ]},
     include_package_data=True,
     # https://github.com/mitsuhiko/flask/issues/1562
