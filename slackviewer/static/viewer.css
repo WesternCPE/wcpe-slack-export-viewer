@@ -12,22 +12,22 @@ body {
 #slack-archive-viewer {
     padding: 0;
     margin: 0;
-    height: 100vh;
+    height: 100%;
     overflow: auto;
 }
 
 #sidebar {
-  display: block;
-  width: 280px;
-  color: white;
-  text-align: left;
-  background-color: #4D394B;
-  z-index: 10;
-  overflow-y: scroll;
-  overflow-x: auto;
-  height: 100vh;
-  user-select: none;
-  float: left;
+    display: block;
+    width: 280px;
+    color: white;
+    text-align: left;
+    background-color: #181a1d;
+    z-index: 10;
+    overflow-y: scroll;
+    overflow-x: auto;
+    height: 100vh;
+    user-select: none;
+    position: fixed;
 }
 
 #sidebar a {
@@ -61,7 +61,7 @@ body {
 
 .messages {
     width: calc(100vw - 340px);
-    height: 100vh;
+    height: 100%;
     text-align: left;
     display: block;
     padding-left: 20px;
@@ -240,4 +240,16 @@ a:hover {
 img.preview {
     max-width: 100%;
     height: auto;
+}
+
+
+@media print {
+    #sidebar {
+        display: none;
+    }
+
+    .messages {
+        width: 100%;
+        padding: 0;
+    }
 }

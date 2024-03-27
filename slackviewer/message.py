@@ -71,8 +71,13 @@ class Message(object):
     @property
     def msg(self):
         text = self._message.get("text")
+        subtype = self._message.get("subtype")
+
         if text:
             text = self._formatter.render_text(text)
+        elif subtype and subtype == "message_deleted":
+            original_text = self._message.get("original").get("text")
+            text = self._formatter.render_text("DELETED: " + original_text)
         return text
 
     def user_message(self, user_id):
