@@ -66,6 +66,11 @@ class Message(object):
             allfiles = [self._message["file"]]
         else:
             allfiles = self._message.get("files", [])
+
+        # If this is a message_deleted event, the files are in the "original" key
+        if not allfiles and self._message.get("subtype") == "message_deleted":
+            allfiles = self._message.get("original").get("files", [])
+
         return [ LinkAttachment("FILE", entry, self._formatter) for entry in allfiles ]
 
     @property
